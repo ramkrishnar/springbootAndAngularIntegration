@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+
+    <div class="custom">
+      <label>
+      Servername
+      </label>
+      <input type="text" class="form-control" (input)='onupdateserver($event)'>
+      <input type="text" class="form-control" [(ngModel)]='servername'>
+      <p>{{servername}}</p>
+      <button class="btn btn-primary" [hidden]="!allowserver" (click)='oncreateserver()'>Add server</button>
+      <p *ngIf="servercreated">{{servercreation}}</p>
+      <h2 [ngStyle]='{backgroundColor:getcolor()}'>server with id {{serverid}} status {{getserverstatus()}} server {{servercreation}}</h2>
+      <p *ngFor='let ser of server; let i of index'>{{i}}{{  ser}}</p>
+     
+    </div>
+    <div class="panel-heading" style="color:red">{{element.name}}</div>
+    <p class="panel-body">
+      <strong *ngIf="element.type==='server'" style='color:red'>{{element.content}} </strong>
+      <em *ngIf="element.type=== 'blueprint'" style='color:blue'>{{element.content}}</em>
+    </p>
+     <p appBasicdir>custom directives</p>
+  </div>
+  </div>
+</div>

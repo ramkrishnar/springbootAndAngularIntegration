@@ -1,0 +1,186 @@
+<div class="container">
+  <div class="row">
+
+<div class="col-lg-6">
+  <div class="custom">
+    <label>id</label>
+    <input type="text" class="form-control" [(ngModel)]='emp.id'/>
+    <label>name</label>
+    <input type="text" class="form-control" [(ngModel)]='emp.name'/>
+    <label>mobile</label>
+    <input type="text" class="form-control" [(ngModel)]='emp.mobile'/>
+    <label>city</label>
+    <input type="text" class="form-control" [(ngModel)]='emp.city'/>
+    <button class="btn btn-primary" (click)="onSave()">Save</button>
+    <button class="btn btn-primary" (click)="onGet()">GetAddress</button>
+  </div>
+</div>
+
+    </div>
+    <div class="row">
+    <div class="col-lg-6" col-lg-offset-3>
+      <div class="custom">
+        <table border="1">
+          <tr>
+            <th>
+              ID
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              mobile
+            </th>
+            <th>
+           City
+            </th>
+            <th>
+              Edit
+            </th>
+<th>
+  delete
+</th>
+
+          </tr>
+<tr *ngFor="let e of user; let i = index">
+  <td>
+    {{e.id}}
+  </td>
+  <td>
+   {{e.name}}
+  </td>
+  <td>{{e.mobile}}</td>
+<td>{{e.city}}</td>
+<td>
+  <button class="btn btn-primary" (click)="updateuser(e,i)">Edit</button>
+</td>
+<td>
+  <button class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+</td>
+</tr>
+
+        </table>
+        <hr>
+        <table>
+          <tr>
+            <td>
+              unit
+            </td>
+            <td>
+              {{result}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Street_name
+            </td>
+            <td>
+              {{result}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              unit
+            </td>
+            <td>
+              {{result}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              unit
+            </td>
+            <td>
+              {{result}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <label>unit</label>
+        <input type="text" class="form-control" #unit>
+        <label>street_number</label>
+        <input type="text" class="form-control" #street_number>
+        <label>street_type</label>
+        <input type="text" class="form-control" #street_type>
+        <label>Street_name</label>
+        <input type="text" class="form-control" #Street_name>
+        <label>city</label>
+        <input type="text" class="form-control" #city>
+        <br>
+        <button class="btn btn-primary" (click)="onGet(unit.value,street_number.value,street_type.value,Street_name.value,city.value)">GetAddress</button>
+      </div>
+      <div class="col-lg-6">
+        <label>unit</label>
+        <input type="text" class="form-control" [(ngModel)]='addres.unit'>
+        <label>street_number</label>
+        <input type="text" class="form-control" [(ngModel)]='addres.street_number'>
+        <label>street_type</label>
+        <input type="text" class="form-control" [(ngModel)]='addres.street_type'>
+        <label>Street_name</label>
+        <input type="text" class="form-control" [(ngModel)]='addres.street_name'>
+        <label>city</label>
+        <input type="text" class="form-control" [(ngModel)]='addres.city'>
+        <br>
+        <button class="btn btn-primary" (click)="saveAddress()">SaveAddress</button>
+     
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <section>
+          <header class="header">
+            <div class="row">
+              <div class="col-md-4">
+                <h1>Address</h1>
+              </div>
+              <div class="col-md-6">
+   
+              </div>
+              <div class="col-md-2">
+   
+              </div>
+            </div>
+   
+          </header>
+        </section>
+   
+        <section class="main">
+   
+          <table class="table">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Unit</th>
+              <th>Street_name</th>
+              <th>street_number</th>
+              <th>street_type</th>
+              <th>city</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of add; let i=index">
+              <th scope="row">{{i}}</th>
+              <td>{{user.id}}</td>
+              <td>{{user.unit}}</td>
+              <td>{{user.street_name}}</td>
+              <td>{{user.street_number}}</td>
+              <td>{{user.street_type}}</td>
+              <td>{{user.city}}</td>
+              <td>
+              </td>
+            </tr>
+   
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</div>
