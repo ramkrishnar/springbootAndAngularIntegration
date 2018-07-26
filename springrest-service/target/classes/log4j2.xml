@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <!-- Console Appender -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </Console>
+    <!-- File Appender -->
+    <RollingFile name="File" fileName="d:/appsss.log" filePattern="d/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+       <Policies>
+           <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+        <SizeBasedTriggeringPolicy size="1MB" />
+    </Policies>
+    <DefaultRolloverStrategy max="3"/>
+    </RollingFile>
+    <!-- <SMTP name="Mail" subject="Error Log" to="ramakrishnaecec7@gmail.com" from="salurysrcp123@gmail.com"
+          smtpHost="smtp.gmail.com" smtpPort="465" 
+      bufferSize="50">
+    </SMTP> -->
+  </Appenders>
+
+  <Loggers>
+    <!-- Log everything in custom package -->
+    <Logger name="com.springrestapp.serviceapi" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+ <Logger name="com.springrestapp.service" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+    <Logger name="com.springrestapp.aop" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+    <!-- Log everything in Spring Boot -->
+    <Logger name="org.springframework.boot" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+
+    <!-- Log everything in Spring Core -->
+    <Logger name="org.springframework.core" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+
+    <Root level="error">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Root>
+    
+  </Loggers>
+</Configuration>

@@ -1,0 +1,11 @@
+com\springrestapp\pojo\Address.class
+com\springrestapp\dao\AddressDao.class
+com\springrestapp\service\AddressService$1.class
+com\springrestapp\pojo\User.class
+com\springrestapp\service\SpringrestService.class
+com\springrestapp\pojo\ErrorDetails.class
+com\springrestapp\dao\UserDao.class
+com\springrestapp\service\AddressService.class
+com\springrestapp\service\SpringrestServiceImpl.class
+com\springrestapp\aop\ServiceAop.class
+com\springrestapp\aop\CustomAop.class

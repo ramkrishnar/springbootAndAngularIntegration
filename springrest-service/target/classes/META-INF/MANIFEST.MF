@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springrest-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ramesh
+Implementation-Vendor-Id: com.springrestapp
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springrestapp/springrest-service
+Created-By: Maven Integration for Eclipse
+

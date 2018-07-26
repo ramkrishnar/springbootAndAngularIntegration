@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "log4j.appender.FILE.MaxFileSize",
+    "type": "java.lang.String",
+    "description": "A description for 'log4j.appender.FILE.MaxFileSize'"
+  },
+  {
+    "name": "log4j.appender.FILE.DatePattern",
+    "type": "java.lang.String",
+    "description": "A description for 'log4j.appender.FILE.DatePattern'"
+  },
+  {
+    "name": "log4j.appender.FILE.MaxBackupIndex",
+    "type": "java.lang.String",
+    "description": "A description for 'log4j.appender.FILE.MaxBackupIndex'"
+  }
+]}
