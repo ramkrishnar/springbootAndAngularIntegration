@@ -1,0 +1,72 @@
+Es6 notes:
+Arrow function:
+
+arrow function does n't have own this it is inherited from parent.
+var x=function(){
+    this.val=1;
+    setTimeout( () =>{
+        this.val++
+      console.log(this.val);
+    }, 1);
+}
+ x();
+
+currying:
+---------
+var x=function(a){
+return (b)=>{
+    return a+b;
+}
+}
+ var y=x(2);
+ console.log(y(3));//5
+ console.log(y(4));//6
+ 
+ 
+ 
+ iterartors:
+ -----------
+javascript string,arrays,set,maps are iterarator
+var myset=new Set([1,2,2,2,3]);
+console.log(myset)//1,2,3;duplicates not allows.
+for(let v of myset){
+console.log(v)//1,2,3 only itteratble object allows  for of loop remaing for in loop
+}
+
+this:
+-------
+
+this.table='window table';//global scope;
+
+ const cleanble=function(soap){
+ console.log(this.table);
+ }
+ this.ram={
+ table:'ram table'
+ }// global object
+
+const raj={
+table:'raj table'
+}
+cleanble.call(this,'some soap');//window table
+
+cleanble.call(this.ram,'some soap');//ram table
+
+cleanble.call(raj,'some soap');//raj table
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
