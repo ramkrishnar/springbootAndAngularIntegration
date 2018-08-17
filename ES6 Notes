@@ -55,6 +55,43 @@ cleanble.call(this.ram,'some soap');//ram table
 cleanble.call(raj,'some soap');//raj table
 
 
+ASYNC &Await:
+------------
+
+The word “async” before a function means one simple thing: a function always returns a promise.If the code has return <non-promise> in it, then JavaScript automatically wraps it into a resolved promise with that value. 
+
+
+console.log('movie');
+let movie= async ()=>{                           //Async function returns ticket promise
+let promiseticket=new Promise((reslove,reject)=>  //1 st promise
+{
+    setTimeout(()=>{
+        reslove('ticket')
+    },3000);
+})
+let getpopcorn=new Promise((reslove,reject)=>{reslove('popcorn')})// 2nd promise
+let getbutter=new Promise((reslove,reject)=>{reslove('butter')})// 3rd promise
+let ticket=await promiseticket;                                  //ticket waiting until promiseticket reslove or reject then executing next step
+console.log(`want popcorn${ticket}`);// after ticket executing printing in console
+let popcorn=await getpopcorn;//popcorn waiting until getpopcorn reslove or reject then executing next step
+console.log(`got popcorn${popcorn}`);//after popcorn executing printing in console
+let butter=await getbutter;//butter waiting until getbutter reslove or reject then executing next step
+console.log(`got popcorn${butter}`);//after butter executing printing in console
+ const [t,p,b]=await Promise.all([ticket,getpopcorn,getbutter])// executin all promises at atime
+ console.log(`${t} + ${p}+ ${b}`);//
+return ticket;
+
+}
+movie().then((m)=>{console.log(m);})
+
+output:
+movie
+want popcornticket
+got popcornpopcorn
+got popcornbutter
+ticket + popcorn+ butter
+ticket
+
 
 
 
