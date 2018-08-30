@@ -7,7 +7,7 @@ var x=function(){
     setTimeout( () =>{
         this.val++
       console.log(this.val);
-    }, 1);
+    }, 1000);
 }
  x();
 
@@ -80,7 +80,6 @@ console.log(`got popcorn${butter}`);//after butter executing printing in console
  const [t,p,b]=await Promise.all([ticket,getpopcorn,getbutter])// executin all promises at atime
  console.log(`${t} + ${p}+ ${b}`);//
 return ticket;
-
 }
 movie().then((m)=>{console.log(m);})
 
